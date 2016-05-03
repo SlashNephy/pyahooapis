@@ -1,4 +1,7 @@
-import daservice, furiganaservice, jimservice, keyphraseservice, kouseiservice, maservice
+#! python3
+# -*- coding: utf-8 -*-
+
+from . import daservice, furiganaservice, jimservice, keyphraseservice, kouseiservice, maservice
 
 MA_RESULT_MA = maservice.RESULT_MA
 MA_RESULT_UNIQ = maservice.RESULT_UNIQ
@@ -59,12 +62,10 @@ KOUSEI_NO_FILTER_PLENASM = kouseiservice.NO_FILTER_PLENASM
 KOUSEI_NO_FILTER_ABBREVIATION = kouseiservice.NO_FILTER_ABBREVIATION
 
 class JLPAPIs(object):
-    
-    def __init__(self, appid, encoding=None):
-        self.da = daservice.DAService(appid)
-        self.furigana = furiganaservice.FuriganaService(appid)
-        self.jim = jimservice.JIMService(appid)
-        self.keyphrase = keyphraseservice.KeyphraseService(appid)
-        self.kousei = kouseiservice.KouseiService(appid)
-        self.ma = maservice.MAService(appid, encoding)
-
+	def __init__(self, appid, encoding=None):
+		self.da = daservice.DAService(appid)
+		self.furigana = furiganaservice.FuriganaService(appid)
+		self.jim = jimservice.JIMService(appid)
+		self.keyphrase = keyphraseservice.KeyphraseService(appid)
+		self.kousei = kouseiservice.KouseiService(appid)
+		self.ma = maservice.MAService(appid, encoding)
